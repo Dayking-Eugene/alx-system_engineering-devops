@@ -1,4 +1,11 @@
 #!/bin/bash
-chmod --reference=olleh hello
+#!/bin/bash
+
+# Get the mode of olleh using stat command
+olleh_mode=$(stat -c "%a" olleh)
+
+# Set the mode of hello to be the same as olleh
+chmod "$olleh_mode" hello
+
 
 
